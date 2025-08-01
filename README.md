@@ -3,7 +3,7 @@
 
 ---
 
-Car Dealership
+## Car Dealership
 
 As a group (if you like), create an ERD for a car dealership. The dealership sells both new and used cars, and it operates a service facility. Base your design on the following business rules:
 
@@ -29,6 +29,6 @@ Once you have created all the tables, populate each table with at least 5 record
 
 ---
 
-Created schema based on prompt:
+## Created schema based on prompt:
 
 ![image](scema.jpg)
