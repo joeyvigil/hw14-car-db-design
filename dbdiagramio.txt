@@ -38,7 +38,7 @@ Table invoices {
   id integer [primary key, INCREMENT]
   salesperson_id integer [not null]
   cust_id integer [not null]
-  car_serial_id integer [not null]
+  car_serial_id varchar [not null]
   cost money [not null]
   updated_at timestamp [default: `now()`]
 }
@@ -46,14 +46,14 @@ Table invoices {
 Table service_tickets {
   id integer [primary key, INCREMENT]
   cust_id integer [not null]
-  car_serial_id integer [not null]
+  car_serial_id varchar [not null]
   service_type varchar [not null]
   cost money [not null]
   updated_at timestamp [default: `now()`]
 }
 
 Table cars {
-  serial_id integer [primary key]
+  serial_id varchar [primary key]
   make varchar
   model varchar
   year integer

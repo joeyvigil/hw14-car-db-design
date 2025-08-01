@@ -31,4 +31,4 @@ Once you have created all the tables, populate each table with at least 5 record
 
 ## Created schema based on prompt:
 
-![image](scema.jpg)
+![image](scema.png)
