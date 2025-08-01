@@ -26,3 +26,9 @@ As a group (if you like), create an ERD for a car dealership. The dealership sel
 Once you have designed the ERD; SOLO - Create a SQLite database, and use DDL (Data Definition Language) to create the Tables in accordance with your ERD.
 
 Once you have created all the tables, populate each table with at least 5 records.
+
+---
+
+Created schema based on prompt:
+
+![image](scema.jpg)
