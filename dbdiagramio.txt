@@ -1,0 +1,83 @@
+// Use DBML to define your database structure
+// Docs: https://dbml.dbdiagram.io/docs
+// Paste code into: https://dbdiagram.io/
+Project Car_Dealership {
+  database_type: 'SQLite'
+  Note: 'Car Dealership ERD'
+}
+
+
+Table salespersons {
+  id integer [primary key, INCREMENT]
+  first varchar [not null]
+  last varchar [not null]
+  phone varchar
+  account_num integer
+  updated_at timestamp [default: `now()`]
+}
+
+Table customers {
+  id integer [primary key, INCREMENT]
+  first varchar [not null]
+  last varchar [not null]
+  phone varchar
+  account_num integer 
+  updated_at timestamp [default: `now()`]
+}
+
+Table mechanics {
+  id integer [primary key, INCREMENT]
+  first varchar [not null]
+  last varchar [not null]
+  phone varchar
+  account_num integer
+  updated_at timestamp [default: `now()`]
+}
+
+Table invoices {
+  id integer [primary key, INCREMENT]
+  salesperson_id integer [not null]
+  cust_id integer [not null]
+  car_serial_id integer [not null]
+  cost money [not null]
+  updated_at timestamp [default: `now()`]
+}
+
+Table service_tickets {
+  id integer [primary key, INCREMENT]
+  cust_id integer [not null]
+  car_serial_id integer [not null]
+  service_type varchar [not null]
+  cost money [not null]
+  updated_at timestamp [default: `now()`]
+}
+
+Table cars {
+  serial_id integer [primary key]
+  make varchar
+  model varchar
+  year integer
+  color varchar
+  updated_at timestamp [default: `now()`]
+}
+
+Table service_mechanics {
+  id integer [primary key, INCREMENT]
+  service_id integer
+  mechanic_id integer
+}
+
+
+Ref: "salespersons"."id" < "invoices"."salesperson_id"
+
+Ref: "customers"."id" < "invoices"."cust_id"
+
+Ref: "cars"."serial_id" < "invoices"."car_serial_id"
+
+Ref: "customers"."id" < "service_tickets"."cust_id"
+
+Ref: "cars"."serial_id" < "service_tickets"."car_serial_id"
+
+Ref: "service_tickets"."id" < "service_mechanics"."service_id"
+
+Ref: "mechanics"."id" < "service_mechanics"."mechanic_id"
